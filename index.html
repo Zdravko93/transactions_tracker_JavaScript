@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Vanilla JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,400;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="backdrop"></div>
+    <div class="modal">
+        <div class="modal-content">
+            <p class="modal-error-message"></p>
+            <button class="modal-button">OK</button>
+        </div>
+    </div>
+    <h1>Transactions Tracker</h1>
+    <section class="expense_tracker">
+        <section>
+            <h2 class="current-balance">Your balance<span class="balance-number">0, 000</span></h2>
+            <div class="data-split">
+                <div>
+                    <h4>Income</h4>
+                    <span class="income-amount">0, 000</span>
+                </div>
+                <div>
+                    <h4>Expense</h4>
+                    <span class="expense-amount">0, 000</span>
+                </div>
+            </div>
+
+            <h3 class="expenses-list-header">Transactions</h3>
+            <div>
+                <ul class="data-list">
+                    <!-- list items to be dynamically added here-->
+                </ul>
+            </div>
+            <h3 class="transaction-header">Add New Transaction</h3>
+            <div class="new-transaction">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" placeholder="Enter name of transaction..." />
+                </div>
+                <div class="input-group">
+                    <label for="amount">Amount</label>
+                    <input id="amount" type="text" placeholder="Enter amount" />
+                </div>
+            </div>
+            <button class="add-income-button">Add income</button>
+            <button class="add-expense-button">Add expense</button>
+        </section>
+    </section>
+</body>
+</html>
+
+

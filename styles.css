@@ -1,0 +1,440 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #3b3b6e;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+label,
+input,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------- */
+/*TYPOGRAPHY*/
+h1 {
+  text-align: center;
+  margin: 2em 0em 1em;
+  color: white;
+}
+
+.balance-number {
+  display: block;
+  font-size: 1.5rem;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.data-split span {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.income-amount {
+  color: green;
+}
+
+.expense-amount {
+  color: red;
+}
+
+.expenses-list-header,
+.transaction-header {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  border-bottom: 2px solid rgb(18, 110, 122);
+}
+
+/*---------------------------------------------------------------------------------*/
+/* BUTTON(S) DEFAULT STYLES*/
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*---------------------------------------------------------------------------------*/
+.expense_tracker {
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: -moz-max-content;
+  width: max-content;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.current-balance {
+  color: #3b3b6e;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.data-split {
+  display: flex;
+  gap: 5em;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.data-split div:first-child {
+  position: relative;
+}
+
+.data-split div:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(100% + 2.5em);
+  transform: translateX(-50%);
+  height: 100%;
+  width: 1px;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.26);
+}
+
+.data-list {
+  margin-top: 1em;
+  list-style: none;
+}
+
+.expense-item {
+  padding: 0.2em;
+  color: rgb(18, 110, 122);
+  box-shadow: 1px 1px 5px 1px rgba(0, 1, 1, 0.5);
+  display: flex;
+  justify-content: space-between;
+}
+
+.expense-item:not(:first-of-type) {
+  margin-top: 0.5em;
+}
+
+.item-amount {
+  font-size: 1.2rem;
+}
+
+.edit-button,
+.delete-button {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  padding: 0.3em 1em;
+  font-size: 1rem;
+  background: red;
+  color: white;
+  transition: transform 300ms ease;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  transform: scale(1.02);
+}
+
+.edit-button,
+.edit-field {
+  background: orange;
+}
+
+.edit-field {
+  padding: 0.2em;
+  font-size: 1rem;
+  margin-left: 1em;
+}
+
+.new-edit-input {
+  margin-right: 0.5em;
+  padding: 0.2em;
+  font-size: 1rem;
+  background: rgb(131, 173, 53);
+  color: white;
+}
+
+.save-button {
+  padding: 0.3em 1em;
+  font-weight: 700;
+  font-size: 1rem;
+  background: limegreen;
+  color: white;
+}
+
+.save-button:hover {
+  transform: scale(1.02);
+}
+
+.new-transaction {
+  margin-top: 1em;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group:first-of-type {
+  margin-bottom: 1em;
+}
+
+.input-group label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: rgb(18, 110, 122);
+}
+
+.input-group label:first-child {
+  margin-bottom: 0.2em;
+}
+
+.input-group input {
+  outline: none;
+  padding: 0.3em 0.5em;
+  font-size: 0.9rem;
+}
+
+.input-group input::-moz-placeholder {
+  color: grey;
+}
+
+.input-group input::placeholder {
+  color: grey;
+}
+
+.add-income-button,
+.add-expense-button {
+  padding: 0.5em 4em;
+  margin-top: 0.5em;
+  font-weight: bold;
+  font-size: 1rem;
+  background: rgba(22, 173, 42, 0.22);
+  color: black;
+  width: 100%;
+  transition: all 200ms ease;
+}
+
+.add-income-button:hover {
+  background: green;
+  color: white;
+}
+
+.add-expense-button {
+  background: rgba(221, 47, 16, 0.22);
+  color: white;
+}
+
+.add-expense-button:hover {
+  background: rgb(221, 47, 16);
+}
+
+/*-------------- */
+/* CLASSES AND PSEUDOCLASSES USED IN JAVASCRIPT */
+.border-green {
+  border-right: 3px solid green;
+}
+
+.border-red {
+  border-right: 3px solid red;
+}
+
+.item-fade-in {
+  animation: item-fade-in 300ms linear;
+}
+
+.current-balance-update {
+  animation: current-balance-pulse 700ms 300ms linear;
+}
+
+.modal-fade-in {
+  animation: modal-fade-in 500ms linear;
+}
+
+.list-item-fade-out {
+  animation: list-item-fade-out 700ms linear;
+}
+
+/* folding paper effect pseudoclass */
+.expense_tracker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 50px 50px 0;
+  border-color: white;
+  transition: all 500ms ease;
+}
+
+.expense_tracker:hover::before {
+  border-width: 0 100px 100px 0;
+  border-color: #eee #3b3b6e;
+}
+
+/*---------------------------*/
+/* ERROR MODAL */
+.modal {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: white;
+  color: black;
+  background: white;
+  width: 500px;
+  min-height: 200px;
+  justify-content: center;
+  z-index: 10;
+  display: none;
+}
+
+.modal-content {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-error-message {
+  color: red;
+}
+
+.modal-button {
+  padding: 0.3em 1em;
+  font-weight: 900;
+  font-size: 1rem;
+  color: white;
+  background: purple;
+}
+
+/* -------------- */
+/* BACKDROP */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+}
+
+/* ----------------------- */
+/* ANIMATIONS */
+@keyframes item-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes current-balance-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes list-item-fade-out {
+  0% {
+    opacity: 100;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 25%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* MEDIA QUERIES */
+@media (max-width: 450px) {
+  .expense_tracker {
+    max-width: 70%;
+    padding: 1em;
+  }
+  .current-balance {
+    font-size: 1rem;
+  }
+  .data-split {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .data-split div:first-child::after {
+    display: none;
+  }
+  .data-list {
+    margin-top: 0.5em;
+  }
+  .expense-item {
+    flex-direction: column;
+    padding: 1em;
+  }
+  .edit-button,
+  .delete-button {
+    margin-top: 0.5em;
+  }
+  .input-group label,
+  .input-group input {
+    font-size: 0.9rem;
+  }
+  .add-income-button,
+  .add-expense-button {
+    padding: 0.5em 2em;
+  }
+  .modal {
+    width: 90%;
+    min-height: 150px;
+  }
+  .modal-button {
+    padding: 0.3em 0.8em;
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
